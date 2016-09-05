@@ -22,9 +22,15 @@ Finally, build the kernel:
 FREATURES
 ===================
 .-Latest linux kernel source code (3.4.112)
+
 .-Added CPU GOVERNORS
+
 .-Added I/O
+
 .-Added Security Patches
+
 .-Added THunderGharge
+
 .-Deleted MTK Stuff
+
 .-Much More!
