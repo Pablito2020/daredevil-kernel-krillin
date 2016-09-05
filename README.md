@@ -1,11 +1,7 @@
 WHAT IS THIS?
 =============
 
-Linux Kernel source code for the device bq Aquaris E4.5
-
-The sources for the Ubuntu Edition can be found on the branch
-aquaris-E4.5-ubuntu-rtm. The README.md there covers building, etc for
-Ubuntu.
+Flash Red Kernel source code for the device bq Aquaris E4.5
 
 BUILD INSTRUCTIONS?
 ===================
@@ -13,15 +9,22 @@ BUILD INSTRUCTIONS?
 Specific sources are separated by branches and each version is tagged with it's corresponding number. First, you should
 clone the project:
 
-	$ git clone git@github.com:bq/aquaris-E4.5.git
+	$ git clone git@github.com:Pablito2020/Flash-Red-Kernel.git
 
 After it, choose the version you would like to build:
 
-	$ cd aquaris-E4.5/
-	$ git checkout 1.2.1_20140721-0600
-
+	$ cd aquaris-E4.5
 
 Finally, build the kernel:
 
 	$ ./makeMtk -t krillin n k
 
+FREATURES
+===================
+.-Latest linux kernel source code (3.4.112)
+.-Added CPU GOVERNORS
+.-Added I/O
+.-Added Security Patches
+.-Added THunderGharge
+.-Deleted MTK Stuff
+.-Much More!
