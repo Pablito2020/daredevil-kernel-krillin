@@ -13,7 +13,7 @@ clone the project:
 
 After it, choose the version you would like to build:
 
-	$ cd aquaris-E4.5
+	$ cd Flash-Red-Kernel
 
 Finally, build the kernel:
 
