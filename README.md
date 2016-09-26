@@ -34,4 +34,3 @@ FREATURES
 .-Deleted MTK Stuff
 
 .-Much More!
-# cyanogenmod_android_kernel_krillin
