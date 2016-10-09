@@ -23,7 +23,7 @@ usage() {
 }
 
 make_clean() {
-    echo "**** Cleaning ****"
+    echo "**** Starting... ****"
     nice make ${makeflags} ${makedefs} distclean
 }
 
@@ -170,7 +170,10 @@ make ${makeflags} ${makejobs} ${makedefs}
 
 if [ $? -ne 0 ]; then exit 1; fi
 
-echo "**** Successfully built kernel ****"
+echo "***********************************************"
+echo "***  SUCCESFULLY COMPILED DAREDEVIL KERNEL  ***"
+echo "***        SOURCES BY PABLITO2020           ***"
+echo "***********************************************"
 
 mkimg="${MTK_ROOT_BUILD}/tools/mkimage"
 if [ "${KBUILD_OUTPUT_SUPPORT}" == "yes" ]; then
@@ -181,7 +184,9 @@ kernel_img="${curdir}/arch/arm/boot/Image"
 kernel_zimg="${curdir}/arch/arm/boot/zImage"
 fi
 
-echo "**** Generate download images ****"
+echo "***********************************************"
+echo "*           KERNEL READY TO FLASH!            *"
+echo "***********************************************"
 
 if [ ! -x ${mkimg} ]; then chmod a+x ${mkimg}; fi
 
