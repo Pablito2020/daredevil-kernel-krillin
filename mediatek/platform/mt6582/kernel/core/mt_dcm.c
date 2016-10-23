@@ -361,7 +361,7 @@ void dcm_enable(unsigned int type)
             dcm_writel(DISP_HW_DCM_DIS_CLR1, 0xFFFFFFFF);
 
 
-			//LARB0 „³ DISP, MDP
+			//LARB0 \84\B3 DISP, MDP
 	        //RO,bootup set once status = 1'b0,DCM off setting=N/A
 			dcm_readl(SMILARB0_DCM_STA);
 	        //RO,bootup set once status = 1'b1,DCM off setting=1'b0
@@ -396,7 +396,7 @@ void dcm_enable(unsigned int type)
             //dcm_writel(SMILARB0_DCM_SET, 0x3 << 15);
 
 
- 			//LARB2 „³ ISP,VENC
+ 			//LARB2 \84\B3 ISP,VENC
 	        //RO,bootup set once status = 1'b0,DCM off setting=N/A
 			dcm_readl(SMILARB2_DCM_STA);
 	        //RO,bootup set once status = 1'b1,DCM off setting=1'b0
@@ -419,7 +419,7 @@ void dcm_enable(unsigned int type)
             dcm_clrl(VDEC_DCM_CON, 0x1);//clear bit0
 
 
- 			//LARB1 „³ VDEC
+ 			//LARB1 \84\B3 VDEC
 	        //RO,bootup set once status = 1'b0,DCM off setting=N/A
 			dcm_readl(SMILARB1_DCM_STA);
 	        //RO,bootup set once status = 1'b1,DCM off setting=1'b0
@@ -568,7 +568,7 @@ void dcm_disable(unsigned int type)
         dcm_writel(DISP_HW_DCM_DIS_CLR1, 0x0);
 
 
-		//LARB0 „³ DISP, MDP
+		//LARB0 \84\B3 DISP, MDP
         //RO,bootup set once status = 1'b0,DCM off setting=N/A
 		dcm_readl(SMILARB0_DCM_STA);
         //RO,bootup set once status = 1'b1,DCM off setting=1'b0
@@ -601,7 +601,7 @@ void dcm_disable(unsigned int type)
         dcm_writel(VENC_CLK_DCM_CTRL, 0xFFFFFFFE);//clear bit0
         dcm_writel(VENC_CLK_CG_CTRL,  0x00000000);//clear bit0~bit31
 
-		//LARB2 „³ ISP,VENC
+		//LARB2 \84\B3 ISP,VENC
         //RO,bootup set once status = 1'b0,DCM off setting=N/A
 		dcm_readl(SMILARB2_DCM_STA);
         //RO,bootup set once status = 1'b1,DCM off setting=1'b0
@@ -620,7 +620,7 @@ void dcm_disable(unsigned int type)
 
         dcm_setl(VDEC_DCM_CON, 0x1);//,set bit0=1
 
-		//LARB1 „³ VDEC
+		//LARB1 \84\B3 VDEC
         //RO,bootup set once status = 1'b0,DCM off setting=N/A
 		dcm_readl(SMILARB1_DCM_STA);
         //RO,bootup set once status = 1'b1,DCM off setting=1'b0
@@ -726,10 +726,10 @@ static ssize_t dcm_state_show(struct kobject *kobj, struct kobj_attribute *attr,
 
 static ssize_t dcm_state_store(struct kobject *kobj, struct kobj_attribute *attr,const char *buf, size_t n)
 {
-    char cmd[10];
+    char cmd[16];
     unsigned int mask;
 
-    if (sscanf(buf, "%s %x", cmd, &mask) == 2) {
+    if (sscanf(buf, "%15s %x", cmd, &mask) == 2) {
         mask &= ALL_DCM;
 
         /*
