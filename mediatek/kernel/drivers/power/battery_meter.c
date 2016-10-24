@@ -599,8 +599,8 @@ int force_get_tbat(void)
         bat_temperature_val = BattVoltToTemp(bat_temperature_volt);        
     }
     
-    bm_print(BM_LOG_CRTI, "[force_get_tbat] %d,%d,%d,%d,%d,%d\n", 
-        bat_temperature_volt_temp, bat_temperature_volt, fg_current_state, fg_current_temp, fg_r_value, bat_temperature_val);
+    /* bm_print(BM_LOG_CRTI, "[force_get_tbat] %d,%d,%d,%d,%d,%d\n", 
+        bat_temperature_volt_temp, bat_temperature_volt, fg_current_state, fg_current_temp, fg_r_value, bat_temperature_val); */
     
     return bat_temperature_val;    
 #endif    
@@ -1450,7 +1450,7 @@ void oam_init(void)
         oam_init_i=1;
     }
 
-    bm_print(BM_LOG_CRTI, "[oam_init] %d,%d,%d,%d,%d,%d\n", 
+    /* bm_print(BM_LOG_CRTI, "[oam_init] %d,%d,%d,%d,%d,%d\n", 
         oam_v_ocv_1, oam_v_ocv_2, oam_r_1, oam_r_2, oam_d0, oam_i_ori);
 
 	bm_print(BM_LOG_CRTI, "[oam_init_inf] hw_OCV, hw_D0, RTC, D0, oam_OCV_init, tbat\n");
@@ -1459,7 +1459,7 @@ void oam_init(void)
 	
 	
 	bm_print(BM_LOG_CRTI, "[oam_init_inf] %d, %d, %d, %d, %d, %d\n",
-		gFG_voltage, (100 - fgauge_read_capacity_by_v(gFG_voltage)), g_rtc_fg_soc, gFG_DOD0 ,oam_v_ocv_init, force_get_tbat());
+		gFG_voltage, (100 - fgauge_read_capacity_by_v(gFG_voltage)), g_rtc_fg_soc, gFG_DOD0 ,oam_v_ocv_init, force_get_tbat()); */
  
 }
 
@@ -2973,8 +2973,8 @@ static ssize_t show_FG_HW_version(struct device *dev,struct device_attribute *at
     IMM_GetOneChannelValue(13,adcdata,&hw_ver_adc);
     hw_ver_adc = hw_ver_adc * 1500/4096;
     bm_print(BM_LOG_CRTI, "[FG] show_FG_HW_version : %d\n", hw_ver_adc);
-    //LiuHuojun 20140113 zplus PCB板检测ADC XP 0.7V为1.1版, 其他为1.0,
-    //V1.1板未改电阻时检测为1.1V左右,V1.0 ADC置空,目前检测电压为0.5V,可能存在板差异
+    //LiuHuojun 20140113 zplus PCB\B0\E5\BC\EC\B2\E2ADC XP 0.7V为1.1\B0\E6, \C6\E4\CB\FB为1.0,
+    //V1.1\B0\E5未\B8牡\E7\D7\E8时\BC\EC\B2\E2为1.1V\D7\F3\D3\D2,V1.0 ADC\D6每\D5,目前\BC\EC\B2\E2\B5\E7压为0.5V,\BF\C9\C4艽\E6\D4诎\E5\B2\EE\D2\EC
     if(hw_ver_adc < 500)  
     {
         return sprintf(buf, "%s\n", "PCB Ver: 1.0");
