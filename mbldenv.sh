@@ -22,3 +22,5 @@ else
 fi
 export PYTHONPATH
 
+# Use user build variant by default
+export TARGET_BUILD_VARIANT=user
