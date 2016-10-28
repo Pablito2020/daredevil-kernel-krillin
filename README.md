@@ -17,7 +17,7 @@ Build the kernel/Zimage:
 
 Build boot.img :
 
-        $ ./pack_bootimage.sh
+    $ ./pack_bootimage.sh
 
 FEATURES
 ===================
