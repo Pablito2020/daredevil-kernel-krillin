@@ -3,30 +3,33 @@
 BUILD INSTRUCTIONS?
 ===================
 
-Specific sources are separated by branches and each version is tagged with it's corresponding number. First, you should
-clone the project:
+First open a terminal and clone the project:
 
-	$ git clone git@github.com:Pablito2020/DareDevil-Kernel.git
+	$ git clone https://github.com/Pablito2020/DareDevil-Kernel.git
 
-After it, choose the version you would like to build:
+After it, enter to the folder where the DareDevil is located:
 
 	$ cd DareDevil-Kernel
 
-Finally, build the kernel:
+Build the kernel/Zimage:
 
 	$ ./makeMtk -t krillin n k
+
+Build boot.img :
+
+        $ ./pack_bootimage.sh
 
 FEATURES
 ===================
 .-Latest linux kernel source code (3.4.112)
 
-.-Added CPU GOVERNORS (ThunderX as default)
+.-Added CPU GOVERNORS
 
 .-Added I/O
 
 .-Added Security Patches
 
-.-Added ThunderGharge
+.-Added FastCharge
 
 .-Added F2FS support (must be included in recovery too)
 
