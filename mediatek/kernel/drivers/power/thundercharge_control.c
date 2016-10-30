@@ -1,5 +1,5 @@
 /*
- * Copyright © 2015, Varun Chitre "varun.chitre15" <varun.chitre15@gmail.com>
+ * Copyright Â© 2015, Varun Chitre "varun.chitre15" <varun.chitre15@gmail.com>
  *
  * Charger Control driver for MTK Linear Charger
  *
@@ -20,8 +20,8 @@
 #include "thundercharge_control.h"
 
 #define ENABLED             0
-#define AC_CURRENT          650
-#define USB_CURRENT         450
+#define AC_CURRENT          1300
+#define USB_CURRENT         630
 #define MAX_VBUS_CURRENT    1000
 #define MULTIPLIER          100
 #define THUNDERCHARGE       "thundercharge"
