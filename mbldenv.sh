@@ -11,7 +11,7 @@ ANDROID_JAVA_HOME=/opt/jdk1.6.0_45
 export ANDROID_JAVA_HOME
 
 # Overwrite PATH environment setting for JDK & arm-eabi if already exists
-PATH=/opt/jdk1.6.0_45/bin:$PWD/toolchain/linaro-4.9/bin:$PATH
+PATH=/opt/jdk1.6.0_45/bin:$PWD/toolchain/UBERTC-5.3/bin:$PATH
 export PATH
 
 # Add MediaTek developed Python libraries path into PYTHONPATH
